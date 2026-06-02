@@ -11,6 +11,8 @@ import MetalsTable from './components/MetalsTable';
 import RiskMatrix from './components/RiskMatrix';
 import RecentMeasurements from './components/RecentMeasurements';
 import GasMonitorCard from './components/GasMonitorCard';
+import ChatWidget from './components/ChatWidget';
+import RecommendationsCard from './components/RecommendationsCard';
 
 import DatabaseSchemaPage from './components/pages/DatabaseSchemaPage';
 import EmployeesPage from './components/pages/EmployeesPage';
@@ -55,6 +57,7 @@ export default function App() {
                 <div style={{ flex:1, minWidth:0 }}><MetalsTable /></div>
               </div>
               <RecentMeasurements />
+              <RecommendationsCard />
             </>
           )}
 
@@ -70,6 +73,9 @@ export default function App() {
           </div>
         </main>
       </div>
+
+      {/* Global floating chat widget — available on all pages */}
+      <ChatWidget />
     </div>
   );
 }
