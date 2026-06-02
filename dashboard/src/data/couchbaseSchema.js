@@ -520,19 +520,22 @@ export const exampleDocuments = {
 };
 
 // ── Mock Employees (extended for table view) ──────────────────
+// bloodLead: µmol/L  |  limit (gender): µmol/L
+// bloodCadmium: nmol/L  |  cdLimit: M=40, F=25 nmol/L  (AFS 2011:19)
+// urinaryArsenic: µmol/mol creatinine  |  asLimit: 20 µmol/mol cr
 export const mockEmployees = [
-  { id: "EMP-001", name: "Dennis Rimstedt",   role: "Machine Operator",    zone: "Sensor / Gula",     status: "active",  gender: "M", bloodLead: 0.47, limit: 1.5, pct: 31.3, badge: "RFID-4421", lastMedical: "2026-02-10" },
-  { id: "EMP-002", name: "Maja Lindqvist",     role: "QC Technician",       zone: "XRF Plockhytt 1",   status: "active",  gender: "F", bloodLead: 0.34, limit: 0.5, pct: 68.0, badge: "RFID-3812", lastMedical: "2026-01-15" },
-  { id: "EMP-003", name: "Michael Skoglund",   role: "Flotation Engineer",  zone: "Flotation 2.2",     status: "active",  gender: "M", bloodLead: 0.51, limit: 1.5, pct: 34.0, badge: "RFID-2257", lastMedical: "2026-03-01" },
-  { id: "EMP-004", name: "Ingrid Karlsson",    role: "Env. Coordinator",    zone: "Finesline / SGM",   status: "active",  gender: "F", bloodLead: 0.29, limit: 0.5, pct: 58.0, badge: "RFID-5531", lastMedical: "2026-02-20" },
-  { id: "EMP-005", name: "Lars Bergström",     role: "Sensor Technician",   zone: "Sensor / Gula",     status: "active",  gender: "M", bloodLead: 0.53, limit: 1.5, pct: 35.3, badge: "RFID-6640", lastMedical: "2026-02-12" },
-  { id: "EMP-006", name: "Sofia Petersson",    role: "Lab Analyst",         zone: "XRF Plockhytt 2",   status: "active",  gender: "F", bloodLead: 0.31, limit: 0.5, pct: 62.0, badge: "RFID-7712", lastMedical: "2026-01-20" },
-  { id: "EMP-007", name: "Anders Nilsson",     role: "Maintenance Tech",    zone: "Dry Sep / IWT",     status: "active",  gender: "M", bloodLead: 0.44, limit: 1.5, pct: 29.3, badge: "RFID-8823", lastMedical: "2026-03-05" },
-  { id: "EMP-008", name: "Karin Johansson",    role: "Water Treatment Op.", zone: "Water Treatment",   status: "active",  gender: "F", bloodLead: 0.22, limit: 0.5, pct: 44.0, badge: "RFID-9914", lastMedical: "2026-02-05" },
-  { id: "EMP-009", name: "Per Eriksson",       role: "Loader Operator",     zone: "Hjullastare",       status: "active",  gender: "M", bloodLead: 0.18, limit: 1.5, pct: 12.0, badge: "RFID-1025", lastMedical: "2026-01-28" },
-  { id: "EMP-010", name: "Britta Magnusson",   role: "HSE Manager",         zone: "Styrhytt",          status: "active",  gender: "F", bloodLead: 0.12, limit: 0.5, pct: 24.0, badge: "RFID-1136", lastMedical: "2026-03-10" },
-  { id: "EMP-011", name: "Johan Gustafsson",   role: "Process Operator",    zone: "Flotation 3.2",     status: "active",  gender: "M", bloodLead: 0.49, limit: 1.5, pct: 32.7, badge: "RFID-1247", lastMedical: "2026-02-18" },
-  { id: "EMP-012", name: "Anna Olsson",        role: "Safety Inspector",    zone: "Catwalk / Balkong", status: "on_leave", gender: "F", bloodLead: 0.26, limit: 0.5, pct: 52.0, badge: "RFID-1358", lastMedical: "2025-12-10" },
+  { id: "EMP-001", role: "Machine Operator",    zone: "Sensor / Gula",     gender: "M", bloodLead: 0.47, limit: 1.5, pct: 31.3, badge: "RFID-4421", lastMedical: "2026-02-10", bloodCadmium: 8.2,  cdLimit: 40, urinaryArsenic: 12.4, asLimit: 20 },
+  { id: "EMP-002", role: "QC Technician",       zone: "XRF Plockhytt 1",   gender: "F", bloodLead: 0.34, limit: 0.5, pct: 68.0, badge: "RFID-3812", lastMedical: "2026-01-15", bloodCadmium: 14.1, cdLimit: 25, urinaryArsenic: 9.8,  asLimit: 20 },
+  { id: "EMP-003", role: "Flotation Engineer",  zone: "Flotation 2.2",     gender: "M", bloodLead: 0.51, limit: 1.5, pct: 34.0, badge: "RFID-2257", lastMedical: "2026-03-01", bloodCadmium: 9.4,  cdLimit: 40, urinaryArsenic: 14.2, asLimit: 20 },
+  { id: "EMP-004", role: "Env. Coordinator",    zone: "Finesline / SGM",   gender: "F", bloodLead: 0.29, limit: 0.5, pct: 58.0, badge: "RFID-5531", lastMedical: "2026-02-20", bloodCadmium: 11.3, cdLimit: 25, urinaryArsenic: 8.1,  asLimit: 20 },
+  { id: "EMP-005", role: "Sensor Technician",   zone: "Sensor / Gula",     gender: "M", bloodLead: 0.53, limit: 1.5, pct: 35.3, badge: "RFID-6640", lastMedical: "2026-02-12", bloodCadmium: 10.1, cdLimit: 40, urinaryArsenic: 16.8, asLimit: 20 },
+  { id: "EMP-006", role: "Lab Analyst",         zone: "XRF Plockhytt 2",   gender: "F", bloodLead: 0.31, limit: 0.5, pct: 62.0, badge: "RFID-7712", lastMedical: "2026-01-20", bloodCadmium: 13.0, cdLimit: 25, urinaryArsenic: 7.5,  asLimit: 20 },
+  { id: "EMP-007", role: "Maintenance Tech",    zone: "Dry Sep / IWT",     gender: "M", bloodLead: 0.44, limit: 1.5, pct: 29.3, badge: "RFID-8823", lastMedical: "2026-03-05", bloodCadmium: 7.6,  cdLimit: 40, urinaryArsenic: 11.0, asLimit: 20 },
+  { id: "EMP-008", role: "Water Treatment Op.", zone: "Water Treatment",   gender: "F", bloodLead: 0.22, limit: 0.5, pct: 44.0, badge: "RFID-9914", lastMedical: "2026-02-05", bloodCadmium: 6.4,  cdLimit: 25, urinaryArsenic: 6.3,  asLimit: 20 },
+  { id: "EMP-009", role: "Loader Operator",     zone: "Hjullastare",       gender: "M", bloodLead: 0.18, limit: 1.5, pct: 12.0, badge: "RFID-1025", lastMedical: "2026-01-28", bloodCadmium: 4.2,  cdLimit: 40, urinaryArsenic: 5.1,  asLimit: 20 },
+  { id: "EMP-010", role: "HSE Manager",         zone: "Styrhytt",          gender: "F", bloodLead: 0.12, limit: 0.5, pct: 24.0, badge: "RFID-1136", lastMedical: "2026-03-10", bloodCadmium: 3.8,  cdLimit: 25, urinaryArsenic: 4.4,  asLimit: 20 },
+  { id: "EMP-011", role: "Process Operator",    zone: "Flotation 3.2",     gender: "M", bloodLead: 0.49, limit: 1.5, pct: 32.7, badge: "RFID-1247", lastMedical: "2026-02-18", bloodCadmium: 8.9,  cdLimit: 40, urinaryArsenic: 13.7, asLimit: 20 },
+  { id: "EMP-012", role: "Safety Inspector",    zone: "Catwalk / Balkong", gender: "F", bloodLead: 0.26, limit: 0.5, pct: 52.0, badge: "RFID-1358", lastMedical: "2025-12-10", bloodCadmium: 9.7,  cdLimit: 25, urinaryArsenic: 7.9,  asLimit: 20 },
 ];
 
 // ── Mock Sensors (extended for table view) ────────────────────
@@ -565,14 +568,201 @@ export function generateTimeSeriesData(sensorId, baseNgvPct, hours = 24) {
   });
 }
 
-// ── Mock RAG ingestion logs (extended) ───────────────────────
+// ── Database folder structure (maps to actual source files) ─────
+export const DB_FOLDER_STRUCTURE = {
+  root: "chemsafe_db/",
+  folders: [
+    {
+      id: "risk_assessments",
+      name: "risk_assessments/",
+      label: "Risk Assessments (Area sheets)",
+      color: "#7c6dfa",
+      description: "Per-area chemical risk assessment sheets — NF codes correspond to work zone identifiers",
+      files: [
+        "NF-5001.csv","NF-5002.csv","NF-5003.csv","NF-5004.csv","NF-5005.csv",
+        "NF-5006.csv","NF-5007.csv","NF-5008.csv","NF-5012.csv","NF-5013.csv",
+        "NF-7430.csv","NF-7432.csv","NF-7433.csv","NF-7434.csv","NF-7435.csv",
+        "NF-7436.csv","NF-7437.csv","NF-7439.csv","NF-7462.csv","NF-7463.csv",
+        "NF-7464.csv","NF-7465.csv","NF-7466.csv","NF-7467.csv","NF-7468.csv",
+        "NF-7492.csv","NF-7493.csv","NF-7494.csv","NF-7495.csv","NF-7496.csv",
+      ],
+    },
+    {
+      id: "measurement_campaigns",
+      name: "measurement_campaigns/",
+      label: "Compiled Measurement Campaigns",
+      color: "#22d3ee",
+      description: "All-area compiled campaign snapshots from 2020–2021",
+      files: [
+        "NF-Alla_200513.csv",
+        "NF-Alla_201112.csv",
+        "NF-Alla_210603.csv",
+      ],
+    },
+    {
+      id: "individual_measurements",
+      name: "individual_measurements/",
+      label: "Individual Sample Measurements (M-sheets)",
+      color: "#f59e0b",
+      description: "Individual measurement sample records — M-numbers are lab sample IDs",
+      files: [
+        "NF-M567.csv","NF-M581.csv","NF-M582.csv","NF-M584.csv","NF-M585.csv",
+        "NF-M586.csv","NF-M587.csv","NF-M588.csv","NF-M589.csv","NF-M590.csv",
+        "NF-M591.csv","NF-M593.csv","NF-M594.csv",
+      ],
+    },
+    {
+      id: "substance_analysis",
+      name: "substance_analysis/",
+      label: "Substance-Specific Measurement Logs",
+      color: "#f97316",
+      description: "Aggregated measurement logs per substance type across all campaigns",
+      files: [
+        "NF-Mätning_Kolväten.csv",
+        "NF-Mätning_Kvävedioxid.csv",
+        "NF-Mätning_Metaller_Damm.csv",
+        "NF-Mätning_Oorganiskt_Damm.csv",
+      ],
+    },
+    {
+      id: "ventilation_data",
+      name: "ventilation_data/",
+      label: "Ventilation Measurements (tv-sheets)",
+      color: "#10b981",
+      description: "Ventilation capacity and airflow measurements per duct/zone",
+      files: [
+        "NF-tv132.csv","NF-tv145.csv","NF-tv146.csv","NF-tv149.csv",
+        "NF-tv150.csv","NF-tv151.csv","NF-tv152.csv",
+      ],
+    },
+    {
+      id: "threshold_exceedances",
+      name: "threshold_exceedances/",
+      label: "Physical Threshold Exceedances (>20% NGV)",
+      color: "#ef4444",
+      description: "Filtered views showing only samples exceeding 20% of occupational limit",
+      files: [
+        "NF-Metaller_gt20pct_Fysiskt.csv",
+        "NF-Oorganiskt_Damm_gt20pct_Fysiskt.csv",
+      ],
+    },
+    {
+      id: "risk_models",
+      name: "risk_models/",
+      label: "Risk Assessment Models & Zone Mapping",
+      color: "#a78bfa",
+      description: "Risk scoring models, zone definitions, and overall risk evaluation sheet",
+      files: [
+        "NF-Riskbedömning.csv",
+        "NF-Riskbedömningsmodell.csv",
+        "NF-Områdesindelning.csv",
+      ],
+    },
+    {
+      id: "reference_docs",
+      name: "reference_docs/",
+      label: "Reference & Supporting Documents",
+      color: "#6b7a99",
+      description: "Hygiene rules, table of contents, information sheets, and baseline data",
+      files: [
+        "NF-Blad1.csv",
+        "NF-Hygienregler_NF.csv",
+        "NF-Information.csv",
+        "NF-Innehållsförteckning.csv",
+      ],
+    },
+  ],
+  rootFiles: [
+    { name: "Sammanställning_Bly_NF.xlsx", type: "excel", label: "Biologisk exponeringskontroll Bly" },
+  ],
+};
+
+// ── Mock RAG ingestion logs — all 67 source files ────────────
+// NF prefix = "Riskbedömning Kemiska Arbetsmiljörisker 2026.05.28_NF-{sheet}"
+// Generated from actual file listing of the source dataset
 export const mockIngestionLogs = [
-  { id: "LOG-2026-0528-001", file: "chemsafe_risk_assessment_2026.pdf",    type: "pdf",   status: "completed", chunks: 312, embeddings: 312, ms: 8430,  date: "2026-05-28", triggeredBy: "Scheduler" },
-  { id: "LOG-2026-0311-002", file: "measurement_campaign_260311.xlsx",     type: "excel", status: "completed", chunks: 47,  embeddings: 47,  ms: 1204,  date: "2026-03-11", triggeredBy: "EMP-010" },
-  { id: "LOG-2025-0122-003", file: "measurement_campaign_250122.xlsx",     type: "excel", status: "completed", chunks: 38,  embeddings: 38,  ms: 990,   date: "2025-01-22", triggeredBy: "EMP-010" },
-  { id: "LOG-2024-0229-004", file: "measurement_campaign_240229.xlsx",     type: "excel", status: "completed", chunks: 41,  embeddings: 41,  ms: 1080,  date: "2024-02-29", triggeredBy: "EMP-010" },
-  { id: "LOG-2024-0115-005", file: "afs_2020_6_occupational_exposure.pdf", type: "pdf",   status: "completed", chunks: 228, embeddings: 228, ms: 6100,  date: "2024-01-15", triggeredBy: "EMP-010" },
-  { id: "LOG-2023-1201-006", file: "ventilation_audit_report_2023.pdf",    type: "pdf",   status: "completed", chunks: 95,  embeddings: 95,  ms: 2510,  date: "2023-12-01", triggeredBy: "Scheduler" },
-  { id: "LOG-2023-0223-007", file: "measurement_campaign_230223.xlsx",     type: "excel", status: "completed", chunks: 35,  embeddings: 35,  ms: 880,   date: "2023-02-23", triggeredBy: "EMP-010" },
-  { id: "LOG-2022-1105-008", file: "ppe_compliance_report_2022.pdf",       type: "pdf",   status: "error",     chunks: 12,  embeddings: 0,   ms: 340,   date: "2022-11-05", triggeredBy: "EMP-010" },
+  // ── xlsx (root) ────────────────────────────────────────────────
+  { id: "LOG-001", file: "Sammanställning_Bly_NF.xlsx",         type: "excel", category: "root",                   status: "completed", chunks: 48,  embeddings: 48,  ms: 1120,  date: "2026-05-29", triggeredBy: "Scheduler" },
+
+  // ── Risk Assessments (NF area codes) ──────────────────────────
+  { id: "LOG-002", file: "NF-5001.csv",  type: "csv", category: "risk_assessments",      status: "completed", chunks: 6,   embeddings: 6,   ms: 82,    date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-003", file: "NF-5002.csv",  type: "csv", category: "risk_assessments",      status: "completed", chunks: 7,   embeddings: 7,   ms: 88,    date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-004", file: "NF-5003.csv",  type: "csv", category: "risk_assessments",      status: "completed", chunks: 5,   embeddings: 5,   ms: 71,    date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-005", file: "NF-5004.csv",  type: "csv", category: "risk_assessments",      status: "completed", chunks: 6,   embeddings: 6,   ms: 79,    date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-006", file: "NF-5005.csv",  type: "csv", category: "risk_assessments",      status: "completed", chunks: 8,   embeddings: 8,   ms: 94,    date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-007", file: "NF-5006.csv",  type: "csv", category: "risk_assessments",      status: "completed", chunks: 5,   embeddings: 5,   ms: 68,    date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-008", file: "NF-5007.csv",  type: "csv", category: "risk_assessments",      status: "completed", chunks: 7,   embeddings: 7,   ms: 85,    date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-009", file: "NF-5008.csv",  type: "csv", category: "risk_assessments",      status: "completed", chunks: 6,   embeddings: 6,   ms: 77,    date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-010", file: "NF-5012.csv",  type: "csv", category: "risk_assessments",      status: "completed", chunks: 4,   embeddings: 4,   ms: 61,    date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-011", file: "NF-5013.csv",  type: "csv", category: "risk_assessments",      status: "completed", chunks: 5,   embeddings: 5,   ms: 69,    date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-012", file: "NF-7430.csv",  type: "csv", category: "risk_assessments",      status: "completed", chunks: 6,   embeddings: 6,   ms: 80,    date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-013", file: "NF-7432.csv",  type: "csv", category: "risk_assessments",      status: "completed", chunks: 7,   embeddings: 7,   ms: 86,    date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-014", file: "NF-7433.csv",  type: "csv", category: "risk_assessments",      status: "completed", chunks: 6,   embeddings: 6,   ms: 78,    date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-015", file: "NF-7434.csv",  type: "csv", category: "risk_assessments",      status: "completed", chunks: 8,   embeddings: 8,   ms: 97,    date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-016", file: "NF-7435.csv",  type: "csv", category: "risk_assessments",      status: "completed", chunks: 5,   embeddings: 5,   ms: 70,    date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-017", file: "NF-7436.csv",  type: "csv", category: "risk_assessments",      status: "completed", chunks: 6,   embeddings: 6,   ms: 81,    date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-018", file: "NF-7437.csv",  type: "csv", category: "risk_assessments",      status: "completed", chunks: 7,   embeddings: 7,   ms: 89,    date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-019", file: "NF-7439.csv",  type: "csv", category: "risk_assessments",      status: "completed", chunks: 5,   embeddings: 5,   ms: 72,    date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-020", file: "NF-7462.csv",  type: "csv", category: "risk_assessments",      status: "completed", chunks: 8,   embeddings: 8,   ms: 95,    date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-021", file: "NF-7463.csv",  type: "csv", category: "risk_assessments",      status: "completed", chunks: 6,   embeddings: 6,   ms: 80,    date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-022", file: "NF-7464.csv",  type: "csv", category: "risk_assessments",      status: "completed", chunks: 7,   embeddings: 7,   ms: 87,    date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-023", file: "NF-7465.csv",  type: "csv", category: "risk_assessments",      status: "completed", chunks: 5,   embeddings: 5,   ms: 68,    date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-024", file: "NF-7466.csv",  type: "csv", category: "risk_assessments",      status: "completed", chunks: 6,   embeddings: 6,   ms: 78,    date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-025", file: "NF-7467.csv",  type: "csv", category: "risk_assessments",      status: "completed", chunks: 7,   embeddings: 7,   ms: 90,    date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-026", file: "NF-7468.csv",  type: "csv", category: "risk_assessments",      status: "completed", chunks: 6,   embeddings: 6,   ms: 83,    date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-027", file: "NF-7492.csv",  type: "csv", category: "risk_assessments",      status: "completed", chunks: 5,   embeddings: 5,   ms: 71,    date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-028", file: "NF-7493.csv",  type: "csv", category: "risk_assessments",      status: "completed", chunks: 6,   embeddings: 6,   ms: 79,    date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-029", file: "NF-7494.csv",  type: "csv", category: "risk_assessments",      status: "completed", chunks: 7,   embeddings: 7,   ms: 88,    date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-030", file: "NF-7495.csv",  type: "csv", category: "risk_assessments",      status: "completed", chunks: 5,   embeddings: 5,   ms: 67,    date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-031", file: "NF-7496.csv",  type: "csv", category: "risk_assessments",      status: "completed", chunks: 6,   embeddings: 6,   ms: 77,    date: "2026-05-28", triggeredBy: "Scheduler" },
+
+  // ── Measurement Campaigns ─────────────────────────────────────
+  { id: "LOG-032", file: "NF-Alla_200513.csv", type: "csv", category: "measurement_campaigns", status: "completed", chunks: 28,  embeddings: 28,  ms: 310,   date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-033", file: "NF-Alla_201112.csv", type: "csv", category: "measurement_campaigns", status: "completed", chunks: 24,  embeddings: 24,  ms: 268,   date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-034", file: "NF-Alla_210603.csv", type: "csv", category: "measurement_campaigns", status: "completed", chunks: 21,  embeddings: 21,  ms: 241,   date: "2026-05-28", triggeredBy: "Scheduler" },
+
+  // ── Individual Measurements ───────────────────────────────────
+  { id: "LOG-035", file: "NF-M567.csv",  type: "csv", category: "individual_measurements", status: "completed", chunks: 9,   embeddings: 9,   ms: 112,   date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-036", file: "NF-M581.csv",  type: "csv", category: "individual_measurements", status: "completed", chunks: 11,  embeddings: 11,  ms: 134,   date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-037", file: "NF-M582.csv",  type: "csv", category: "individual_measurements", status: "completed", chunks: 10,  embeddings: 10,  ms: 124,   date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-038", file: "NF-M584.csv",  type: "csv", category: "individual_measurements", status: "completed", chunks: 8,   embeddings: 8,   ms: 102,   date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-039", file: "NF-M585.csv",  type: "csv", category: "individual_measurements", status: "completed", chunks: 12,  embeddings: 12,  ms: 146,   date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-040", file: "NF-M586.csv",  type: "csv", category: "individual_measurements", status: "completed", chunks: 9,   embeddings: 9,   ms: 113,   date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-041", file: "NF-M587.csv",  type: "csv", category: "individual_measurements", status: "completed", chunks: 10,  embeddings: 10,  ms: 126,   date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-042", file: "NF-M588.csv",  type: "csv", category: "individual_measurements", status: "completed", chunks: 11,  embeddings: 11,  ms: 137,   date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-043", file: "NF-M589.csv",  type: "csv", category: "individual_measurements", status: "completed", chunks: 8,   embeddings: 8,   ms: 104,   date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-044", file: "NF-M590.csv",  type: "csv", category: "individual_measurements", status: "completed", chunks: 9,   embeddings: 9,   ms: 115,   date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-045", file: "NF-M591.csv",  type: "csv", category: "individual_measurements", status: "completed", chunks: 10,  embeddings: 10,  ms: 128,   date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-046", file: "NF-M593.csv",  type: "csv", category: "individual_measurements", status: "completed", chunks: 7,   embeddings: 7,   ms: 93,    date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-047", file: "NF-M594.csv",  type: "csv", category: "individual_measurements", status: "completed", chunks: 8,   embeddings: 8,   ms: 105,   date: "2026-05-28", triggeredBy: "Scheduler" },
+
+  // ── Substance Analysis ────────────────────────────────────────
+  { id: "LOG-048", file: "NF-Mätning_Kolväten.csv",       type: "csv", category: "substance_analysis", status: "completed", chunks: 22,  embeddings: 22,  ms: 248,   date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-049", file: "NF-Mätning_Kvävedioxid.csv",    type: "csv", category: "substance_analysis", status: "completed", chunks: 19,  embeddings: 19,  ms: 213,   date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-050", file: "NF-Mätning_Metaller_Damm.csv",  type: "csv", category: "substance_analysis", status: "completed", chunks: 31,  embeddings: 31,  ms: 342,   date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-051", file: "NF-Mätning_Oorganiskt_Damm.csv",type: "csv", category: "substance_analysis", status: "completed", chunks: 26,  embeddings: 26,  ms: 289,   date: "2026-05-28", triggeredBy: "Scheduler" },
+
+  // ── Ventilation Data ──────────────────────────────────────────
+  { id: "LOG-052", file: "NF-tv132.csv",  type: "csv", category: "ventilation_data", status: "completed", chunks: 14,  embeddings: 14,  ms: 162,   date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-053", file: "NF-tv145.csv",  type: "csv", category: "ventilation_data", status: "completed", chunks: 16,  embeddings: 16,  ms: 184,   date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-054", file: "NF-tv146.csv",  type: "csv", category: "ventilation_data", status: "completed", chunks: 15,  embeddings: 15,  ms: 173,   date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-055", file: "NF-tv149.csv",  type: "csv", category: "ventilation_data", status: "completed", chunks: 13,  embeddings: 13,  ms: 153,   date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-056", file: "NF-tv150.csv",  type: "csv", category: "ventilation_data", status: "completed", chunks: 17,  embeddings: 17,  ms: 196,   date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-057", file: "NF-tv151.csv",  type: "csv", category: "ventilation_data", status: "completed", chunks: 14,  embeddings: 14,  ms: 165,   date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-058", file: "NF-tv152.csv",  type: "csv", category: "ventilation_data", status: "completed", chunks: 15,  embeddings: 15,  ms: 174,   date: "2026-05-28", triggeredBy: "Scheduler" },
+
+  // ── Threshold Exceedances ─────────────────────────────────────
+  { id: "LOG-059", file: "NF-Metaller_gt20pct_Fysiskt.csv",       type: "csv", category: "threshold_exceedances", status: "completed", chunks: 13,  embeddings: 13,  ms: 149,   date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-060", file: "NF-Oorganiskt_Damm_gt20pct_Fysiskt.csv",type: "csv", category: "threshold_exceedances", status: "completed", chunks: 11,  embeddings: 11,  ms: 131,   date: "2026-05-28", triggeredBy: "Scheduler" },
+
+  // ── Risk Models ───────────────────────────────────────────────
+  { id: "LOG-061", file: "NF-Riskbedömning.csv",        type: "csv", category: "risk_models", status: "completed", chunks: 24,  embeddings: 24,  ms: 272,   date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-062", file: "NF-Riskbedömningsmodell.csv", type: "csv", category: "risk_models", status: "completed", chunks: 18,  embeddings: 18,  ms: 208,   date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-063", file: "NF-Områdesindelning.csv",     type: "csv", category: "risk_models", status: "completed", chunks: 10,  embeddings: 10,  ms: 121,   date: "2026-05-28", triggeredBy: "Scheduler" },
+
+  // ── Reference Docs ────────────────────────────────────────────
+  { id: "LOG-064", file: "NF-Blad1.csv",               type: "csv", category: "reference_docs", status: "completed", chunks: 4,   embeddings: 4,   ms: 58,    date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-065", file: "NF-Hygienregler_NF.csv",     type: "csv", category: "reference_docs", status: "completed", chunks: 7,   embeddings: 7,   ms: 89,    date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-066", file: "NF-Information.csv",         type: "csv", category: "reference_docs", status: "completed", chunks: 5,   embeddings: 5,   ms: 68,    date: "2026-05-28", triggeredBy: "Scheduler" },
+  { id: "LOG-067", file: "NF-Innehållsförteckning.csv",type: "csv", category: "reference_docs", status: "completed", chunks: 3,   embeddings: 3,   ms: 44,    date: "2026-05-28", triggeredBy: "Scheduler" },
 ];
