@@ -4,12 +4,10 @@ const cards = [
   { label:'Compliance Rate', value:'97.3%', sub:'23 exceedances recorded total', icon:ShieldCheck, trend:'+4.2% since 2020', trendUp:true, accent:'#10b981', accentDim:'rgba(16,185,129,0.12)', glow:'0 0 30px rgba(16,185,129,0.1)' },
   { label:'Active Risk Zones', value:'3', sub:'Sensor + Flotation 2.2 / 3.2', icon:AlertTriangle, trend:'Risk score ≥6', trendUp:false, accent:'#f59e0b', accentDim:'rgba(245,158,11,0.12)', glow:'0 0 30px rgba(245,158,11,0.1)' },
   { label:'Avg Blood Lead', value:'0.47 µmol/L', sub:'Men avg · Limit: 1.5 µmol/L', icon:Microscope, trend:'−9% vs 2022', trendUp:true, accent:'#22d3ee', accentDim:'rgba(34,211,238,0.12)', glow:'0 0 30px rgba(34,211,238,0.1)' },
-  { label:'Ventilation Upgrade', value:'128,885 l/s', sub:'Up from 27,139 l/s in 2023', icon:Wind, trend:'+374% capacity', trendUp:true, accent:'#a78bfa', accentDim:'rgba(167,139,250,0.12)', glow:'0 0 30px rgba(167,139,250,0.1)' },
-  { label:'Avg Risk Score', value:'2.4 / 25', sub:'Across all work areas', icon:Activity, trend:'−38% since 2020', trendUp:true, accent:'#f97316', accentDim:'rgba(249,115,22,0.12)', glow:'0 0 30px rgba(249,115,22,0.08)' },
 ];
 export default function KPICards() {
   return (
-    <div style={{ display:'grid', gridTemplateColumns:'repeat(3,1fr)', gap:16 }}>
+    <div style={{ display:'grid', gridTemplateColumns:'repeat(4,1fr)', gap:16 }}>
       {cards.map((c,i) => {
         const Icon = c.icon;
         return (
