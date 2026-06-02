@@ -36,7 +36,7 @@ export default function Sidebar({ activePage, onNavigate }) {
             <Beaker size={18} color="#fff" strokeWidth={2.5} />
           </div>
           <div>
-            <div style={{ fontFamily:"'Space Grotesk', sans-serif", fontWeight:700, fontSize:14, color:'var(--text-primary)', letterSpacing:'-0.2px' }}>SafetyAI</div>
+            <div style={{ fontFamily:"'Space Grotesk', sans-serif", fontWeight:700, fontSize:14, color:'var(--text-primary)', letterSpacing:'-0.2px' }}>ExpoSure</div>
             <div style={{ fontSize:10, color:'var(--text-muted)', letterSpacing:'0.5px', textTransform:'uppercase' }}>Analytics POC</div>
           </div>
         </div>
