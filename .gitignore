@@ -1,0 +1,30 @@
+# CSV files - should be loaded from database
+*.csv
+
+# Dependencies
+node_modules/
+dashboard/node_modules/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build output
+dist/
+build/
+.next/
+
+# Logs
+*.log
+npm-debug.log*
