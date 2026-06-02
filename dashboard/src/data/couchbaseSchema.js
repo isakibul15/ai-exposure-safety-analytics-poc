@@ -522,20 +522,19 @@ export const exampleDocuments = {
 // ── Mock Employees (extended for table view) ──────────────────
 // bloodLead: µmol/L  |  limit (gender): µmol/L
 // bloodCadmium: nmol/L  |  cdLimit: M=40, F=25 nmol/L  (AFS 2011:19)
-// urinaryArsenic: µmol/mol creatinine  |  asLimit: 20 µmol/mol cr
 export const mockEmployees = [
-  { id: "EMP-001", role: "Machine Operator",    zone: "Sensor / Gula",     gender: "M", bloodLead: 0.47, limit: 1.5, pct: 31.3, badge: "RFID-4421", lastMedical: "2026-02-10", bloodCadmium: 8.2,  cdLimit: 40, urinaryArsenic: 12.4, asLimit: 20 },
-  { id: "EMP-002", role: "QC Technician",       zone: "XRF Plockhytt 1",   gender: "F", bloodLead: 0.34, limit: 0.5, pct: 68.0, badge: "RFID-3812", lastMedical: "2026-01-15", bloodCadmium: 14.1, cdLimit: 25, urinaryArsenic: 9.8,  asLimit: 20 },
-  { id: "EMP-003", role: "Flotation Engineer",  zone: "Flotation 2.2",     gender: "M", bloodLead: 0.51, limit: 1.5, pct: 34.0, badge: "RFID-2257", lastMedical: "2026-03-01", bloodCadmium: 9.4,  cdLimit: 40, urinaryArsenic: 14.2, asLimit: 20 },
-  { id: "EMP-004", role: "Env. Coordinator",    zone: "Finesline / SGM",   gender: "F", bloodLead: 0.29, limit: 0.5, pct: 58.0, badge: "RFID-5531", lastMedical: "2026-02-20", bloodCadmium: 11.3, cdLimit: 25, urinaryArsenic: 8.1,  asLimit: 20 },
-  { id: "EMP-005", role: "Sensor Technician",   zone: "Sensor / Gula",     gender: "M", bloodLead: 0.53, limit: 1.5, pct: 35.3, badge: "RFID-6640", lastMedical: "2026-02-12", bloodCadmium: 10.1, cdLimit: 40, urinaryArsenic: 16.8, asLimit: 20 },
-  { id: "EMP-006", role: "Lab Analyst",         zone: "XRF Plockhytt 2",   gender: "F", bloodLead: 0.31, limit: 0.5, pct: 62.0, badge: "RFID-7712", lastMedical: "2026-01-20", bloodCadmium: 13.0, cdLimit: 25, urinaryArsenic: 7.5,  asLimit: 20 },
-  { id: "EMP-007", role: "Maintenance Tech",    zone: "Dry Sep / IWT",     gender: "M", bloodLead: 0.44, limit: 1.5, pct: 29.3, badge: "RFID-8823", lastMedical: "2026-03-05", bloodCadmium: 7.6,  cdLimit: 40, urinaryArsenic: 11.0, asLimit: 20 },
-  { id: "EMP-008", role: "Water Treatment Op.", zone: "Water Treatment",   gender: "F", bloodLead: 0.22, limit: 0.5, pct: 44.0, badge: "RFID-9914", lastMedical: "2026-02-05", bloodCadmium: 6.4,  cdLimit: 25, urinaryArsenic: 6.3,  asLimit: 20 },
-  { id: "EMP-009", role: "Loader Operator",     zone: "Hjullastare",       gender: "M", bloodLead: 0.18, limit: 1.5, pct: 12.0, badge: "RFID-1025", lastMedical: "2026-01-28", bloodCadmium: 4.2,  cdLimit: 40, urinaryArsenic: 5.1,  asLimit: 20 },
-  { id: "EMP-010", role: "HSE Manager",         zone: "Styrhytt",          gender: "F", bloodLead: 0.12, limit: 0.5, pct: 24.0, badge: "RFID-1136", lastMedical: "2026-03-10", bloodCadmium: 3.8,  cdLimit: 25, urinaryArsenic: 4.4,  asLimit: 20 },
-  { id: "EMP-011", role: "Process Operator",    zone: "Flotation 3.2",     gender: "M", bloodLead: 0.49, limit: 1.5, pct: 32.7, badge: "RFID-1247", lastMedical: "2026-02-18", bloodCadmium: 8.9,  cdLimit: 40, urinaryArsenic: 13.7, asLimit: 20 },
-  { id: "EMP-012", role: "Safety Inspector",    zone: "Catwalk / Balkong", gender: "F", bloodLead: 0.26, limit: 0.5, pct: 52.0, badge: "RFID-1358", lastMedical: "2025-12-10", bloodCadmium: 9.7,  cdLimit: 25, urinaryArsenic: 7.9,  asLimit: 20 },
+  { id: "EMP-001", role: "Machine Operator",    zone: "Sensor / Gula",     gender: "M", bloodLead: 0.47, limit: 1.5, pct: 31.3, badge: "RFID-4421", lastMedical: "2026-02-10", bloodCadmium: 8.2,  cdLimit: 40 },
+  { id: "EMP-002", role: "QC Technician",       zone: "XRF Plockhytt 1",   gender: "F", bloodLead: 0.34, limit: 0.5, pct: 68.0, badge: "RFID-3812", lastMedical: "2026-01-15", bloodCadmium: 14.1, cdLimit: 25 },
+  { id: "EMP-003", role: "Flotation Engineer",  zone: "Flotation 2.2",     gender: "M", bloodLead: 0.51, limit: 1.5, pct: 34.0, badge: "RFID-2257", lastMedical: "2026-03-01", bloodCadmium: 9.4,  cdLimit: 40 },
+  { id: "EMP-004", role: "Env. Coordinator",    zone: "Finesline / SGM",   gender: "F", bloodLead: 0.29, limit: 0.5, pct: 58.0, badge: "RFID-5531", lastMedical: "2026-02-20", bloodCadmium: 11.3, cdLimit: 25 },
+  { id: "EMP-005", role: "Sensor Technician",   zone: "Sensor / Gula",     gender: "M", bloodLead: 0.53, limit: 1.5, pct: 35.3, badge: "RFID-6640", lastMedical: "2026-02-12", bloodCadmium: 10.1, cdLimit: 40 },
+  { id: "EMP-006", role: "Lab Analyst",         zone: "XRF Plockhytt 2",   gender: "F", bloodLead: 0.31, limit: 0.5, pct: 62.0, badge: "RFID-7712", lastMedical: "2026-01-20", bloodCadmium: 13.0, cdLimit: 25 },
+  { id: "EMP-007", role: "Maintenance Tech",    zone: "Dry Sep / IWT",     gender: "M", bloodLead: 0.44, limit: 1.5, pct: 29.3, badge: "RFID-8823", lastMedical: "2026-03-05", bloodCadmium: 7.6,  cdLimit: 40 },
+  { id: "EMP-008", role: "Water Treatment Op.", zone: "Water Treatment",   gender: "F", bloodLead: 0.22, limit: 0.5, pct: 44.0, badge: "RFID-9914", lastMedical: "2026-02-05", bloodCadmium: 6.4,  cdLimit: 25 },
+  { id: "EMP-009", role: "Loader Operator",     zone: "Hjullastare",       gender: "M", bloodLead: 0.18, limit: 1.5, pct: 12.0, badge: "RFID-1025", lastMedical: "2026-01-28", bloodCadmium: 4.2,  cdLimit: 40 },
+  { id: "EMP-010", role: "HSE Manager",         zone: "Styrhytt",          gender: "F", bloodLead: 0.12, limit: 0.5, pct: 24.0, badge: "RFID-1136", lastMedical: "2026-03-10", bloodCadmium: 3.8,  cdLimit: 25 },
+  { id: "EMP-011", role: "Process Operator",    zone: "Flotation 3.2",     gender: "M", bloodLead: 0.49, limit: 1.5, pct: 32.7, badge: "RFID-1247", lastMedical: "2026-02-18", bloodCadmium: 8.9,  cdLimit: 40 },
+  { id: "EMP-012", role: "Safety Inspector",    zone: "Catwalk / Balkong", gender: "F", bloodLead: 0.26, limit: 0.5, pct: 52.0, badge: "RFID-1358", lastMedical: "2025-12-10", bloodCadmium: 9.7,  cdLimit: 25 },
 ];
 
 // ── Mock Sensors (extended for table view) ────────────────────
