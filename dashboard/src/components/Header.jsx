@@ -1,10 +1,10 @@
 import { Bell, Search, Calendar, RefreshCw, Download } from 'lucide-react';
-export default function Header() {
+export default function Header({ pageTitle, pageSub }) {
   return (
     <header style={{ position:'sticky', top:0, zIndex:40, background:'rgba(6,11,24,0.85)', backdropFilter:'blur(20px)', borderBottom:'1px solid var(--border)', padding:'0 28px', height:64, display:'flex', alignItems:'center', justifyContent:'space-between' }}>
       <div>
-        <div style={{ fontFamily:"'Space Grotesk', sans-serif", fontSize:20, fontWeight:700, background:'linear-gradient(135deg, #e2e8f8 0%, #7c6dfa 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>Exposure Safety Dashboard</div>
-        <div style={{ fontSize:12, color:'var(--text-muted)', marginTop:1 }}>Chemical Workplace Risk Analytics · NF Halmstad · AFS 2020:6</div>
+        <div style={{ fontFamily:"'Space Grotesk', sans-serif", fontSize:20, fontWeight:700, background:'linear-gradient(135deg, #e2e8f8 0%, #7c6dfa 100%)', WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent', backgroundClip:'text' }}>{pageTitle || 'Exposure Safety Dashboard'}</div>
+        <div style={{ fontSize:12, color:'var(--text-muted)', marginTop:1 }}>{pageSub || 'Chemical Workplace Risk Analytics · NF Halmstad · AFS 2020:6'}</div>
       </div>
       <div style={{ display:'flex', alignItems:'center', gap:10 }}>
         <div style={{ display:'flex', alignItems:'center', gap:8, background:'var(--bg-card)', border:'1px solid var(--border)', borderRadius:10, padding:'7px 14px', color:'var(--text-muted)', fontSize:13 }}>
