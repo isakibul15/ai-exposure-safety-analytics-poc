@@ -27,21 +27,27 @@ const CustomLegend = ({ payload }) => (
     ))}
   </div>
 );
-export default function ExposureTrendChart() {
+export default function ExposureTrendChart({ dateFrom = 2020, dateTo = 2026 }) {
+  // Filter campaigns to the selected year range
+  const filtered = exposureTrendData.filter(d => {
+    const year = parseInt(d.date.split(' ').pop());
+    return year >= dateFrom && year <= dateTo;
+  });
+
   return (
     <div className="card glow-violet" style={{ padding:'24px', height:'100%' }}>
       <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start', marginBottom:20 }}>
         <div>
           <div className="section-title" style={{ marginBottom:4 }}>Exposure Trends</div>
           <div style={{ fontSize:16, fontWeight:700, color:'var(--text-primary)' }}>% of Occupational Limit (NGV) Over Time</div>
-          <div style={{ fontSize:11, color:'var(--text-muted)', marginTop:2 }}>8 measurement campaigns · 2020–2026 · All work areas combined</div>
+          <div style={{ fontSize:11, color:'var(--text-muted)', marginTop:2 }}>{filtered.length} campaigns · {dateFrom}–{dateTo} · All work areas combined</div>
         </div>
         <div style={{ display:'flex', alignItems:'center', gap:6, background:'var(--safe-dim)', border:'1px solid rgba(16,185,129,0.2)', borderRadius:10, padding:'6px 12px', fontSize:12, fontWeight:600, color:'var(--safe)' }}>
           <TrendingDown size={14} />Improving
         </div>
       </div>
       <ResponsiveContainer width="100%" height={300}>
-        <AreaChart data={exposureTrendData} margin={{ top:10, right:10, left:-10, bottom:0 }}>
+        <AreaChart data={filtered} margin={{ top:10, right:10, left:-10, bottom:0 }}>
           <defs>
             <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stopColor="#7c6dfa" stopOpacity={0.3}/><stop offset="95%" stopColor="#7c6dfa" stopOpacity={0}/></linearGradient>
             <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="5%" stopColor="#f97316" stopOpacity={0.25}/><stop offset="95%" stopColor="#f97316" stopOpacity={0}/></linearGradient>
