@@ -113,9 +113,9 @@ export default function IoTDashboardPage() {
               <Tooltip {...tt} formatter={v => [v.toFixed(1) + '% NGV']} />
               <Legend wrapperStyle={{ fontSize: 11 }} />
               <ReferenceLine y={100} stroke="#ef4444" strokeDasharray="4 4" />
-              <Bar dataKey="dust" name="Dust" fill="#f59e0b" radius={[3,3,0,0]} maxBarSize={24} />
-              <Bar dataKey="no2"  name="NO2"  fill="#22d3ee" radius={[3,3,0,0]} maxBarSize={24} />
-              <Bar dataKey="hc"   name="HC"   fill="#a78bfa" radius={[3,3,0,0]} maxBarSize={24} />
+              <Bar dataKey="dust" name="Dust" fill="#f59e0b" radius={[3,3,0,0]} maxBarSize={24} activeBar={false} />
+              <Bar dataKey="no2"  name="NO2"  fill="#22d3ee" radius={[3,3,0,0]} maxBarSize={24} activeBar={false} />
+              <Bar dataKey="hc"   name="HC"   fill="#a78bfa" radius={[3,3,0,0]} maxBarSize={24} activeBar={false} />
             </BarChart>
           </ResponsiveContainer>
         </div>
