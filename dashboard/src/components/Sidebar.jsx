@@ -1,32 +1,35 @@
 import { LayoutDashboard, Activity, FlaskConical, AlertTriangle, Users, Settings, ChevronRight, Beaker, BarChart3, TrendingUp, ShieldCheck, Database, Cpu, Brain, Zap } from 'lucide-react';
 
+// Each item has a unique navId — only ONE is ever highlighted
 const NAV_SECTIONS = [
   {
     title: 'Safety Dashboard',
     items: [
-      { icon: LayoutDashboard, label: 'Overview',          page: 'overview'  },
-      { icon: Activity,        label: 'Exposure Trends',   page: 'overview'  },
-      { icon: FlaskConical,    label: 'Chemical Analysis', page: 'overview'  },
-      { icon: AlertTriangle,   label: 'Risk Matrix',       page: 'overview',  badge: '3' },
-      { icon: Users,           label: 'Bio. Monitoring',   page: 'overview'  },
-      { icon: BarChart3,       label: 'Measurements',      page: 'overview'  },
-      { icon: TrendingUp,      label: 'Compliance',        page: 'overview'  },
-      { icon: ShieldCheck,     label: 'Actions & PPE',     page: 'overview'  },
+      { icon: LayoutDashboard, label: 'Overview',          navId: 'overview',          page: 'overview' },
+      { icon: Activity,        label: 'Exposure Trends',   navId: 'exposure_trends',   page: 'overview' },
+      { icon: FlaskConical,    label: 'Chemical Analysis', navId: 'chemical_analysis', page: 'overview' },
+      { icon: AlertTriangle,   label: 'Risk Matrix',       navId: 'risk_matrix',       page: 'overview', badge: '3' },
+      { icon: Users,           label: 'Bio. Monitoring',   navId: 'bio_monitoring',    page: 'overview' },
+      { icon: BarChart3,       label: 'Measurements',      navId: 'measurements',      page: 'overview' },
+      { icon: TrendingUp,      label: 'Compliance',        navId: 'compliance',        page: 'overview' },
+      { icon: ShieldCheck,     label: 'Actions & PPE',     navId: 'actions_ppe',       page: 'overview' },
     ],
   },
   {
     title: 'Database / IoT',
     items: [
-      { icon: Database, label: 'DB Schema',      page: 'schema'    },
-      { icon: Users,    label: 'Employees',      page: 'employees' },
-      { icon: Cpu,      label: 'Sensors',        page: 'sensors'   },
-      { icon: Zap,      label: 'IoT Time-Series',page: 'iot'       },
-      { icon: Brain,    label: 'RAG Pipeline',   page: 'rag'       },
+      { icon: Database, label: 'DB Schema',       navId: 'schema',    page: 'schema'    },
+      { icon: Users,    label: 'Employees',       navId: 'employees', page: 'employees' },
+      { icon: Cpu,      label: 'Sensors',         navId: 'sensors',   page: 'sensors'   },
+      { icon: Zap,      label: 'IoT Time-Series', navId: 'iot',       page: 'iot'       },
+      { icon: Brain,    label: 'RAG Pipeline',    navId: 'rag',       page: 'rag'       },
     ],
   },
 ];
 
-export default function Sidebar({ activePage, onNavigate }) {
+// activeNavId: the navId of the currently selected item
+// onNavigate(page, navId): called when a nav item is clicked
+export default function Sidebar({ activeNavId, onNavigate }) {
   return (
     <aside style={{ width:'var(--sidebar-w)', minHeight:'100vh', background:'var(--bg-card)', borderRight:'1px solid var(--border)', display:'flex', flexDirection:'column', position:'fixed', top:0, left:0, zIndex:50 }}>
       {/* Logo */}
@@ -57,32 +60,36 @@ export default function Sidebar({ activePage, onNavigate }) {
       <nav style={{ flex:1, padding:'8px 10px', overflowY:'auto' }}>
         {NAV_SECTIONS.map(section => (
           <div key={section.title} style={{ marginBottom: 18 }}>
-            <div style={{ fontSize:10, color:'var(--text-muted)', fontWeight:700, textTransform:'uppercase', letterSpacing:'0.8px', padding:'4px 10px 8px' }}>{section.title}</div>
-            {section.items.map((item, i) => {
+            <div style={{ fontSize:10, color:'var(--text-muted)', fontWeight:700, textTransform:'uppercase', letterSpacing:'0.8px', padding:'4px 10px 8px' }}>
+              {section.title}
+            </div>
+            {section.items.map(item => {
               const Icon = item.icon;
-              const isActive = activePage === item.page && section.items.some(it => it.page === activePage);
-              // For overview section, highlight only if activePage === 'overview' and this is first match
-              const highlight = activePage === item.page;
+              const active = activeNavId === item.navId;
               return (
                 <button
-                  key={item.label}
-                  onClick={() => onNavigate(item.page)}
+                  key={item.navId}
+                  onClick={() => onNavigate(item.page, item.navId)}
                   style={{
                     width:'100%', display:'flex', alignItems:'center', gap:10,
                     padding:'9px 12px', borderRadius:10, marginBottom:2,
-                    background: highlight ? 'rgba(124,109,250,0.14)' : 'transparent',
-                    border: highlight ? '1px solid rgba(124,109,250,0.25)' : '1px solid transparent',
-                    color: highlight ? 'var(--accent-violet)' : 'var(--text-secondary)',
+                    background: active ? 'rgba(124,109,250,0.14)' : 'transparent',
+                    border: active ? '1px solid rgba(124,109,250,0.25)' : '1px solid transparent',
+                    color: active ? 'var(--accent-violet)' : 'var(--text-secondary)',
                     cursor:'pointer', transition:'all 0.15s', textAlign:'left', fontSize:13,
-                    fontWeight: highlight ? 600 : 400,
+                    fontWeight: active ? 600 : 400,
                   }}
-                  onMouseEnter={e => { if (!highlight) { e.currentTarget.style.background = 'rgba(255,255,255,0.03)'; e.currentTarget.style.color = 'var(--text-primary)'; } }}
-                  onMouseLeave={e => { if (!highlight) { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--text-secondary)'; } }}
+                  onMouseEnter={e => { if (!active) { e.currentTarget.style.background = 'rgba(255,255,255,0.03)'; e.currentTarget.style.color = 'var(--text-primary)'; }}}
+                  onMouseLeave={e => { if (!active) { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--text-secondary)'; }}}
                 >
-                  <Icon size={16} strokeWidth={highlight ? 2.5 : 2} />
+                  <Icon size={16} strokeWidth={active ? 2.5 : 2} />
                   <span style={{ flex:1 }}>{item.label}</span>
-                  {item.badge && <span style={{ background:'var(--critical-dim)', color:'var(--critical)', border:'1px solid rgba(239,68,68,0.3)', borderRadius:6, fontSize:10, fontWeight:700, padding:'1px 6px' }}>{item.badge}</span>}
-                  {highlight && <ChevronRight size={14} />}
+                  {item.badge && (
+                    <span style={{ background:'var(--critical-dim)', color:'var(--critical)', border:'1px solid rgba(239,68,68,0.3)', borderRadius:6, fontSize:10, fontWeight:700, padding:'1px 6px' }}>
+                      {item.badge}
+                    </span>
+                  )}
+                  {active && <ChevronRight size={14} />}
                 </button>
               );
             })}
