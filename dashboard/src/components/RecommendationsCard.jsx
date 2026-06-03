@@ -98,9 +98,9 @@ function RecCard({ rec, idx }) {
 }
 
 export default function RecommendationsCard() {
-  const [recs, setRecs]       = useState([]);
-  const [status, setStatus]   = useState('idle'); // 'idle' | 'loading' | 'done' | 'error' | 'fallback'
-  const [errMsg, setErrMsg]   = useState('');
+  const [recs, setRecs]           = useState([]);
+  const [status, setStatus]       = useState('idle');
+  const [errMsg, setErrMsg]       = useState('');
   const [lastFetch, setLastFetch] = useState(null);
 
   async function fetch_() {
