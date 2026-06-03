@@ -51,7 +51,7 @@ export default function AreaExposureChart() {
           <Tooltip content={<CustomTooltip />} cursor={{ fill:'rgba(255,255,255,0.03)' }} />
           <ReferenceLine y={100} stroke="#ef4444" strokeDasharray="4 4" strokeOpacity={0.4} />
           <ReferenceLine y={20} stroke="#f59e0b" strokeDasharray="4 4" strokeOpacity={0.3} />
-          <Bar dataKey="dust" name="Dust % NGV" radius={[4,4,0,0]}>
+          <Bar dataKey="dust" name="Dust % NGV" radius={[4,4,0,0]} activeBar={false}>
             {sorted.map((entry,i) => <Cell key={i} fill={getColor(entry.dust)} fillOpacity={0.85} />)}
           </Bar>
         </BarChart>
