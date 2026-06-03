@@ -98,6 +98,7 @@ function ChunksChart({ logs }) {
         <Bar dataKey="chunks" radius={[3,3,0,0]} maxBarSize={28}
           fill="#7c6dfa"
           label={false}
+          activeBar={false}
         />
       </BarChart>
     </ResponsiveContainer>
