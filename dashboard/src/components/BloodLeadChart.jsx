@@ -35,10 +35,15 @@ const CustomLegend = ({ payload }) => (
   </div>
 );
 
-export default function BloodLeadChart() {
-  const latest = bloodLeadData[bloodLeadData.length-1];
+export default function BloodLeadChart({ dateFrom = 2020, dateTo = 2026 }) {
+  const filtered = bloodLeadData.filter(d => {
+    const year = parseInt(d.period.split(' ').pop());
+    return year >= dateFrom && year <= dateTo;
+  });
+  const data = filtered.length > 0 ? filtered : bloodLeadData;
+  const latest = data[data.length - 1];
   return (
-    <div className="card glow-red" style={{ padding:'24px' }}>
+    <div className="card glow-red" style={{ padding:'24px', height:'100%', boxSizing:'border-box', display:'flex', flexDirection:'column' }}>
       <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start', marginBottom:16 }}>
         <div>
           <div className="section-title" style={{ marginBottom:4 }}>Biological Monitoring</div>
@@ -58,8 +63,8 @@ export default function BloodLeadChart() {
         <AlertTriangle size={13} />
         <span>Female workers exceeded 0.5 µmol/L limit in Q1–Q2 2023 and Q1 2024. Corrective measures implemented.</span>
       </div>
-      <ResponsiveContainer width="100%" height={240}>
-        <LineChart data={bloodLeadData} margin={{ top:0, right:10, left:-10, bottom:0 }}>
+      <ResponsiveContainer width="100%" style={{ flex:1 }} height="100%">
+        <LineChart data={data} margin={{ top:0, right:10, left:-10, bottom:0 }}>
           <CartesianGrid strokeDasharray="3 3" stroke="rgba(99,120,175,0.08)" vertical={false} />
           <XAxis dataKey="period" tick={{ fill:'#6b7fa8', fontSize:10 }} axisLine={false} tickLine={false} interval={3} />
           <YAxis tick={{ fill:'#6b7fa8', fontSize:10 }} axisLine={false} tickLine={false} tickFormatter={v=>v.toFixed(1)} domain={[0,1.0]} />
